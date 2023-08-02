@@ -59,7 +59,7 @@ resource "aws_scheduler_schedule" "default" {
   }
   schedule_expression_timezone = "Asia/Tokyo"
   #   schedule_expression          = "rate(10 minutes)" # for debugging
-  schedule_expression = "cron(0 10 ? * 1-5 *)"
+  schedule_expression = "cron(0 10 ? * 2-6 *)"
 
   target {
     arn      = aws_ecs_cluster.default.arn
