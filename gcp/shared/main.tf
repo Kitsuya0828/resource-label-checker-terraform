@@ -42,3 +42,11 @@ resource "google_artifact_registry_repository" "default" {
   description   = "docker repository for resource-label-checker"
   format        = "DOCKER"
 }
+
+resource "google_artifact_registry_repository_iam_binding" "default" {
+  location   = google_artifact_registry_repository.default.location
+  repository = google_artifact_registry_repository.default.name
+
+  role    = "roles/artifactregistry.reader"
+  members = formatlist("serviceAccount:service-%d@serverless-robot-prod.iam.gserviceaccount.com", local.cloudrun_project_numbers)
+}

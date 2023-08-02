@@ -8,5 +8,9 @@ locals {
 
   artifactregistry_repository_id = "resource-label-checker"
 
+  cloudrun_project_numbers = [
+    1048052035458, # resource-label-checker
+  ]
+
   github_repository_name = "Kitsuya0828/resource-label-checker"
 }
