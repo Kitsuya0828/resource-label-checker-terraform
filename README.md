@@ -14,5 +14,11 @@ Directory `gcp/resource-label-checker-shared/` declares an Artifact Registry for
 
 ![aws_fargate_architecture](https://github.com/Kitsuya0828/resource-label-checker-terraform/assets/60843722/a6fa66d4-d42b-43dc-8e92-2dbfcc80ccdb)
 
+Use EventBridge Scheduler to run ECS Tasks on a regular basis.
+When pulling Docker images from the ECR, VPC endpoints are used to reduce NAT Gateway communication costs
+
 #### `aws/resource-label-checker-lambda`
 ![aws_lambda_architecture](https://github.com/Kitsuya0828/resource-label-checker-terraform/assets/60843722/813501a8-8921-4e88-8812-b849f534cac8)
+
+Create an EventBridge Rule to execute a Lambda function periodically.
+The timeout is 15 minutes, so be careful not to exceed it.
