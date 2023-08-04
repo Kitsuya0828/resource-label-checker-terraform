@@ -39,7 +39,7 @@ resource "google_cloud_run_v2_job" "default" {
 # Cloud Scheduler
 resource "google_cloud_scheduler_job" "job" {
   name             = "resource-label-checker"
-  schedule         = "0 0 10 * 1-5"
+  schedule         = "0 10 * * 1-5"
   time_zone        = "Asia/Tokyo"
   attempt_deadline = "30s"
 
